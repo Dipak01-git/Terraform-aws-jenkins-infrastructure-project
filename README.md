@@ -85,14 +85,18 @@ AWS Infrastructure
 ```text
 Terraform-aws-jenkins-infrastructure-project/
 │
+├── .gitignore
+├── .terraform.lock.hcl
 ├── Jenkinsfile
-├── provider.tf
-├── variables.tf
-├── vpc.tf
-├── subnet.tf
+├── README.md
+├── backend.tf
 ├── internet-gateway.tf
+├── jenkins-server-script.sh
+├── jenkins-server.tf
+├── main.tf
+├── outputs.tf
 ├── route-table.tf
 ├── security-group.tf
-├── jenkins-server.tf
-├── outputs.tf
-└── README.md
+├── subnet.tf
+├── variables.tf
+└── vpc.tf
