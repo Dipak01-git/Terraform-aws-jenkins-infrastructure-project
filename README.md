@@ -100,3 +100,42 @@ Terraform-aws-jenkins-infrastructure-project/
 ├── subnet.tf
 ├── variables.tf
 └── vpc.tf
+## Jenkins CI/CD Pipeline
+
+This project uses Jenkins to automate Terraform
+configuration checks and infrastructure planning.
+
+### Pipeline Stages
+
+1. Checkout - Fetches code from GitHub.
+2. Terraform Version - Checks Terraform version.
+3. Terraform Format - Checks Terraform formatting.
+4. Terraform Init - Initializes Terraform.
+5. Terraform Validate - Validates Terraform configuration.
+6. Terraform Plan - Previews infrastructure changes.
+
+### Pipeline Workflow
+
+GitHub Repository
+       |
+       v
+Jenkins Pipeline
+       |
+       v
+Terraform Init
+       |
+       v
+Terraform Validate
+       |
+       v
+Terraform Plan
+
+### Post-Build Actions
+
+- Success: Displays a success message.
+- Failure: Displays a failure message.
+
+Note: This pipeline runs Terraform validation and planning.
+It does not automatically create AWS infrastructure
+because the current Jenkinsfile does not contain
+a Terraform Apply stage.
